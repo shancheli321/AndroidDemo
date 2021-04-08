@@ -111,7 +111,7 @@ public class MyBroadcastReceiverActivity extends AppCompatActivity {
 
         customBroadReceiver = new MyCustomBroadReceiver();
         IntentFilter itFilter = new IntentFilter();
-        itFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        itFilter.addAction("com.example.broadcasttest.MY_BROADCAST");
         registerReceiver(customBroadReceiver, itFilter);
     }
 
