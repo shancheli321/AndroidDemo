@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lf.main.MainActivity">
+
+
+    <Button android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_service"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="测试服务service"
+        />
+
+    <Button android:layout_width="0dp"
+        android:id="@+id/bt_layout"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/bt_service"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="测试布局"
+        />
+
+    <Button android:layout_width="0dp"
+        android:id="@+id/bt_activity"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/bt_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="测试activity"
+        />
+    <Button android:layout_width="0dp"
+        android:id="@+id/bt_brodReciver"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/bt_activity"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="测试广播"
+        />
+
+    <TextView
+        android:id="@+id/txtOne"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:text="TextView(显示框)"
+        android:textColor="#EA5246"
+        android:drawableTop="@drawable/ic_launcher_background"
+
+        android:textStyle="bold|italic"
+        android:background="@drawable/shape"
+        android:textSize="18sp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
