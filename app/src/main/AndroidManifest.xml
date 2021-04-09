@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name="com.lf.listview.MyListViewActivity"></activity>
         <activity android:name="com.lf.broadcastceceiver.MyBroadcastReceiverActivity" />
         <activity android:name="com.lf.activity.MySecondActivity" />
         <activity android:name="com.lf.activity.MyActivity" />
@@ -26,32 +26,28 @@
         </activity>
         <activity android:name="com.lf.service.MyServiceActivity" />
 
-        <service android:name="com.lf.service.MyIntentService"
-                    android:exported="false">
+        <service
+            android:name="com.lf.service.MyIntentService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.lf.service.MyIntentService" />
             </intent-filter>
-
         </service>
-
         <service
             android:name="com.lf.service.MyService"
             android:enabled="true"
             android:exported="true" />
-
 
         <receiver android:name="com.lf.broadcastceceiver.MyStaticBroadReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
         <receiver android:name="com.lf.broadcastceceiver.MyCustomBroadReceiver">
             <intent-filter android:priority="100">
                 <action android:name="com.example.broadcasttest.MY_BROADCAST" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name="com.lf.broadcastceceiver.MyLocalReceiver"
             android:enabled="true"
@@ -60,7 +56,6 @@
                 <action android:name="com.example.broadcasttest.MY_LOCAL_BROADCAST" />
             </intent-filter>
         </receiver>
-
     </application>
 
 </manifest>

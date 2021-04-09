@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lf.main.MainActivity">
-
+    tools:context="com.lf.listview.MyListViewActivity">
 
     <ListView
-        android:id="@+id/ls_main"
-        android:layout_height="match_parent"
+        android:id="@+id/m_list"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
