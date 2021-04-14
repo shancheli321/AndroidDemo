@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(makeEntity("service服务", "com.lf.service.MyServiceActivity"));
         arrayList.add(makeEntity("activity", "com.lf.activity.MyActivity"));
         arrayList.add(makeEntity("通知 广播", "com.lf.broadcastceceiver.MyBroadcastReceiverActivity"));
-
+        arrayList.add(makeEntity("文件管理", "com.lf.filepath.MyFilePahtActivity"));
 
         AppAdapter<MyMainEntity> adapter = new MyAdapter(arrayList, R.layout.main_item);
 

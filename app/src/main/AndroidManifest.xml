@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.lf.filepath.MyFilePahtActivity"></activity>
+        <activity android:name="com.app.base.AppBaseActivity"></activity>
+        <activity android:name="com.lf.filepath.MyFilePahtActivity" />
         <activity android:name="com.lf.listview.MyListViewActivity" />
         <activity android:name="com.lf.broadcastceceiver.MyBroadcastReceiverActivity" />
         <activity android:name="com.lf.activity.MySecondActivity" />

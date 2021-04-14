@@ -1,4 +1,4 @@
-package com.lf.filepath;
+package com.app.utils;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;
