@@ -1,4 +1,4 @@
-package com.lf.listview;
+package com.app.base.listadapter;
 
 import android.content.Context;
 import android.util.SparseArray;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AppViewHolder {
+public class AppBaseListViewHolder {
 
     private SparseArray<View> mViews;   //存储ListView 的 item中的View
 
@@ -20,7 +20,7 @@ public class AppViewHolder {
 
 
     //构造方法，完成相关初始化
-    private AppViewHolder(Context context, ViewGroup parent, int layoutRes) {
+    private AppBaseListViewHolder(Context context, ViewGroup parent, int layoutRes) {
         mViews = new SparseArray<>();
         this.context = context;
         View convertView = LayoutInflater.from(context).inflate(layoutRes, parent, false);
@@ -29,13 +29,13 @@ public class AppViewHolder {
     }
 
     //绑定ViewHolder与item
-    public static AppViewHolder bind(Context context, View convertView, ViewGroup parent,
-                                  int layoutRes, int position) {
-        AppViewHolder holder;
+    public static AppBaseListViewHolder bind(Context context, View convertView, ViewGroup parent,
+                                             int layoutRes, int position) {
+        AppBaseListViewHolder holder;
         if (convertView == null) {
-            holder = new AppViewHolder(context, parent, layoutRes);
+            holder = new AppBaseListViewHolder(context, parent, layoutRes);
         } else {
-            holder = (AppViewHolder) convertView.getTag();
+            holder = (AppBaseListViewHolder) convertView.getTag();
             holder.holderView = convertView;
         }
         holder.position = position;
@@ -70,7 +70,7 @@ public class AppViewHolder {
     /**
      * 设置文字
      */
-    public AppViewHolder setText(int id, CharSequence text) {
+    public AppBaseListViewHolder setText(int id, CharSequence text) {
         View view = getView(id);
         if (view instanceof TextView) {
             ((TextView) view).setText(text);
@@ -81,7 +81,7 @@ public class AppViewHolder {
     /**
      * 设置图片
      */
-    public AppViewHolder setImageResource(int id, int drawableRes) {
+    public AppBaseListViewHolder setImageResource(int id, int drawableRes) {
         View view = getView(id);
         if (view instanceof ImageView) {
             ((ImageView) view).setImageResource(drawableRes);
@@ -95,7 +95,7 @@ public class AppViewHolder {
     /**
      * 设置点击监听
      */
-    public AppViewHolder setOnClickListener(int id, View.OnClickListener listener) {
+    public AppBaseListViewHolder setOnClickListener(int id, View.OnClickListener listener) {
         getView(id).setOnClickListener(listener);
         return this;
     }
@@ -103,7 +103,7 @@ public class AppViewHolder {
     /**
      * 设置可见
      */
-    public AppViewHolder setVisibility(int id, int visible) {
+    public AppBaseListViewHolder setVisibility(int id, int visible) {
         getView(id).setVisibility(visible);
         return this;
     }
@@ -111,7 +111,7 @@ public class AppViewHolder {
     /**
      * 设置标签
      */
-    public AppViewHolder setTag(int id, Object obj) {
+    public AppBaseListViewHolder setTag(int id, Object obj) {
         getView(id).setTag(obj);
         return this;
     }

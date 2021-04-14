@@ -1,26 +1,24 @@
-package com.lf.listview;
+package com.app.base.listadapter;
 
 
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.lf.main.R;
-
 import java.util.ArrayList;
 
-public abstract class AppAdapter<T> extends BaseAdapter {
+public abstract class AppBaseListAdapter<T> extends BaseAdapter {
 
     private ArrayList<T> mData;
 
     private int mLayoutRes;           //布局id
 
 
-    public AppAdapter() {
+    public AppBaseListAdapter() {
 
     }
 
-    public AppAdapter(ArrayList<T> mData, int mLayoutRes) {
+    public AppBaseListAdapter(ArrayList<T> mData, int mLayoutRes) {
         this.mData = mData;
         this.mLayoutRes = mLayoutRes;
     }
@@ -42,13 +40,13 @@ public abstract class AppAdapter<T> extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        AppViewHolder holder = AppViewHolder.bind(parent.getContext(), convertView, parent, mLayoutRes
+        AppBaseListViewHolder holder = AppBaseListViewHolder.bind(parent.getContext(), convertView, parent, mLayoutRes
                 , position);
         bindView(holder, getItem(position));
         return holder.getItemView();
     }
 
-    public abstract void bindView(AppViewHolder holder, T obj);
+    public abstract void bindView(AppBaseListViewHolder holder, T obj);
 
 
 

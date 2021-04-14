@@ -1,4 +1,4 @@
-package com.app.base;
+package com.app.base.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -6,15 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.app.utils.AppLog;
-import com.lf.activity.MyActivity;
-import com.lf.broadcastceceiver.MyBroadcastReceiverActivity;
-import com.lf.listview.AppAdapter;
-import com.lf.listview.AppViewHolder;
-import com.lf.service.MyServiceActivity;
+import com.app.base.listadapter.AppBaseListAdapter;
+import com.app.base.listadapter.AppBaseListViewHolder;
 
 import java.util.ArrayList;
 
@@ -41,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(makeEntity("通知 广播", "com.lf.broadcastceceiver.MyBroadcastReceiverActivity"));
         arrayList.add(makeEntity("文件管理", "com.lf.filepath.MyFilePahtActivity"));
 
-        AppAdapter<MyMainEntity> adapter = new MyAdapter(arrayList, R.layout.main_item);
+        AppBaseListAdapter<MyMainEntity> adapter = new MyAdapter(arrayList, R.layout.main_item);
 
         mListView.setAdapter(adapter);
 
@@ -76,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public class MyAdapter extends AppAdapter<MyMainEntity> {
+    public class MyAdapter extends AppBaseListAdapter<MyMainEntity> {
 
         public MyAdapter(ArrayList<MyMainEntity> mData, int mLayoutRes) {
             super(mData, mLayoutRes);
@@ -84,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         @Override
-        public void bindView(AppViewHolder holder, MyMainEntity obj) {
+        public void bindView(AppBaseListViewHolder holder, MyMainEntity obj) {
             holder.setText(R.id.tv_main, obj.getTitle());
 
         }
