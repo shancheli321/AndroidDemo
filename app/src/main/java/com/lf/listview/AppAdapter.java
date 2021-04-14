@@ -50,6 +50,8 @@ public abstract class AppAdapter<T> extends BaseAdapter {
 
     public abstract void bindView(AppViewHolder holder, T obj);
 
+
+
     //添加一个元素
     public void add(T data) {
         if (mData == null) {

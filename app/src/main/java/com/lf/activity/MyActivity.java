@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.app.utils.AppLog;
 import com.lf.main.R;
 
 import java.io.File;
@@ -60,6 +61,8 @@ public class MyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+
+        AppLog.save();
 
         Button bt = findViewById(R.id.bt_jump);
         bt.setOnClickListener(new View.OnClickListener() {

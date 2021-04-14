@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lf.main">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
@@ -13,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.lf.listview.MyListViewActivity"></activity>
+        <activity android:name="com.lf.filepath.MyFilePahtActivity"></activity>
+        <activity android:name="com.lf.listview.MyListViewActivity" />
         <activity android:name="com.lf.broadcastceceiver.MyBroadcastReceiverActivity" />
         <activity android:name="com.lf.activity.MySecondActivity" />
         <activity android:name="com.lf.activity.MyActivity" />
