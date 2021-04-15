@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(makeEntity("activity", "com.lf.activity.MyActivity"));
         arrayList.add(makeEntity("通知 广播", "com.lf.broadcastceceiver.MyBroadcastReceiverActivity"));
         arrayList.add(makeEntity("文件管理", "com.lf.filepath.MyFilePahtActivity"));
+        arrayList.add(makeEntity("推送通知栏", "com.lf.notification.MyNotificationActivity"));
+        arrayList.add(makeEntity("alert弹窗", "com.lf.alert.MyAlertActivity"));
 
         AppBaseListAdapter<MyMainEntity> adapter = new MyAdapter(arrayList, R.layout.main_item);
 
