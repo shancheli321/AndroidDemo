@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         final ArrayList<MyMainEntity> arrayList = new ArrayList<>();
+
 //        arrayList.add(makeEntity("layout和view控件", ""));
         arrayList.add(makeEntity("service服务", "com.lf.service.MyServiceActivity"));
         arrayList.add(makeEntity("activity", "com.lf.activity.MyActivity"));
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(makeEntity("文件管理", "com.lf.filepath.MyFilePahtActivity"));
         arrayList.add(makeEntity("推送通知栏", "com.lf.notification.MyNotificationActivity"));
         arrayList.add(makeEntity("alert弹窗", "com.lf.alert.MyAlertActivity"));
+        arrayList.add(makeEntity("litview", "com.lf.listview.MyListViewActivity"));
 
         AppBaseListAdapter<MyMainEntity> adapter = new MyAdapter(arrayList, R.layout.main_item);
 

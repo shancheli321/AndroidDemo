@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">安卓学习Demo</string>
+
+
+    <string name="date_picker_cancle">取消</string>
+    <string name="date_picker_title">这是日期选择器</string>
+    <string name="date_picker_sure">确定</string>
+
 </resources>

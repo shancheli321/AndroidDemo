@@ -6,10 +6,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AppBaseListAdapter<T> extends BaseAdapter {
 
-    private ArrayList<T> mData;
+    private List<T> mData;
 
     private int mLayoutRes;           //布局id
 
@@ -18,7 +19,7 @@ public abstract class AppBaseListAdapter<T> extends BaseAdapter {
 
     }
 
-    public AppBaseListAdapter(ArrayList<T> mData, int mLayoutRes) {
+    public AppBaseListAdapter(List<T> mData, int mLayoutRes) {
         this.mData = mData;
         this.mLayoutRes = mLayoutRes;
     }
@@ -46,7 +47,22 @@ public abstract class AppBaseListAdapter<T> extends BaseAdapter {
         return holder.getItemView();
     }
 
-    public abstract void bindView(AppBaseListViewHolder holder, T obj);
+    public abstract void bindView(AppBaseListViewHolder holder, T entity);
+
+
+    /**
+     * 局部刷新
+     * @param view
+     * @param itemIndex
+     */
+    public void updateView(View view, int itemIndex) {
+
+         if(view == null) {
+             return;
+         }
+         AppBaseListViewHolder holder = (AppBaseListViewHolder)view.getTag();
+         bindView(holder, mData.get(itemIndex));
+    }
 
 
 

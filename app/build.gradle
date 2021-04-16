@@ -31,4 +31,7 @@ dependencies {
     implementation 'com.github.pqpo:Log4a:1.5.0'
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    implementation 'com.contrarywind:wheelview:4.1.0'
+
 }

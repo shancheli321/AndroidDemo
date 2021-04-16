@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.lf.alert.MyAlertActivity"></activity>
+        <activity android:name="com.lf.fragment.MyFragmentActivity"></activity>
+        <activity android:name="com.lf.datepicker.AppDatePickerActivity" />
+        <activity android:name="com.lf.alert.MyAlertActivity" />
         <activity android:name="com.lf.notification.MyNotificationActivity" />
         <activity android:name="com.app.base.activity.AppBaseActivity" />
         <activity android:name="com.lf.filepath.MyFilePahtActivity" />

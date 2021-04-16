@@ -12,7 +12,7 @@ public class AppBaseListViewHolder {
 
     private SparseArray<View> mViews;   //存储ListView 的 item中的View
 
-    private View holderView;                  //存放convertView
+    private View itemView;                  //存放convertView
 
     private int position;               //游标
 
@@ -25,7 +25,7 @@ public class AppBaseListViewHolder {
         this.context = context;
         View convertView = LayoutInflater.from(context).inflate(layoutRes, parent, false);
         convertView.setTag(this);
-        holderView = convertView;
+        itemView = convertView;
     }
 
     //绑定ViewHolder与item
@@ -36,7 +36,7 @@ public class AppBaseListViewHolder {
             holder = new AppBaseListViewHolder(context, parent, layoutRes);
         } else {
             holder = (AppBaseListViewHolder) convertView.getTag();
-            holder.holderView = convertView;
+            holder.itemView = convertView;
         }
         holder.position = position;
         return holder;
@@ -46,7 +46,7 @@ public class AppBaseListViewHolder {
     public <T extends View> T getView(int id) {
         T t = (T) mViews.get(id);
         if (t == null) {
-            t = (T) holderView.findViewById(id);
+            t = (T) itemView.findViewById(id);
             mViews.put(id, t);
         }
         return t;
@@ -57,7 +57,7 @@ public class AppBaseListViewHolder {
      * 获取当前条目
      */
     public View getItemView() {
-        return holderView;
+        return itemView;
     }
 
     /**
