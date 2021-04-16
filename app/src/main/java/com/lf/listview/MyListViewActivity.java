@@ -37,7 +37,7 @@ public class MyListViewActivity extends AppCompatActivity {
 
         adapter = new AppBaseListAdapter<AppListEntity>(list, R.layout.my_list_layout) {
             @Override
-            public void bindView(AppBaseListViewHolder holder, AppListEntity entity) {
+            public void bindData(AppBaseListViewHolder holder, AppListEntity entity) {
 
                 ((ImageView)holder.getView(R.id.list_image)).setImageResource(entity.getImage());
                 ((TextView)holder.getView(R.id.list_title)).setText(entity.getTitle());

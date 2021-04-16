@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         @Override
-        public void bindView(AppBaseListViewHolder holder, MyMainEntity obj) {
+        public void bindData(AppBaseListViewHolder holder, MyMainEntity obj) {
             holder.setText(R.id.tv_main, obj.getTitle());
 
         }

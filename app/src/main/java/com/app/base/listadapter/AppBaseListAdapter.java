@@ -43,11 +43,11 @@ public abstract class AppBaseListAdapter<T> extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         AppBaseListViewHolder holder = AppBaseListViewHolder.bind(parent.getContext(), convertView, parent, mLayoutRes
                 , position);
-        bindView(holder, getItem(position));
+        bindData(holder, getItem(position));
         return holder.getItemView();
     }
 
-    public abstract void bindView(AppBaseListViewHolder holder, T entity);
+    public abstract void bindData(AppBaseListViewHolder holder, T entity);
 
 
     /**
@@ -61,7 +61,7 @@ public abstract class AppBaseListAdapter<T> extends BaseAdapter {
              return;
          }
          AppBaseListViewHolder holder = (AppBaseListViewHolder)view.getTag();
-         bindView(holder, mData.get(itemIndex));
+        bindData(holder, mData.get(itemIndex));
     }
 
 
