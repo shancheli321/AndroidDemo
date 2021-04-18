@@ -57,10 +57,10 @@ public abstract class AppBaseListAdapter<T> extends BaseAdapter {
      */
     public void updateView(View view, int itemIndex) {
 
-         if(view == null) {
-             return;
-         }
-         AppBaseListViewHolder holder = (AppBaseListViewHolder)view.getTag();
+        if(view == null) {
+            return;
+        }
+        AppBaseListViewHolder holder = (AppBaseListViewHolder)view.getTag();
         bindData(holder, mData.get(itemIndex));
     }
 

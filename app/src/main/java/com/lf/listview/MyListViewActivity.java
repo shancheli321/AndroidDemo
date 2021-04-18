@@ -60,17 +60,19 @@ public class MyListViewActivity extends AppCompatActivity {
     private void updateView(int itemIndex) {
 
         //得到第一个可显示控件的位置，
-         int visiblePosition = mListView.getFirstVisiblePosition();
+        int firstPos = mListView.getFirstVisiblePosition();
+        int lastPos = mListView.getLastVisiblePosition();
 
-         //只有当要更新的view在可见的位置时才更新，不可见时，跳过不更新
-         if (itemIndex - visiblePosition >= 0) {
+        //只有当要更新的view在可见的位置时才更新，不可见时，跳过不更新
+        //可见才更新，不可见则在getView()时更新
+        if (itemIndex >= firstPos && itemIndex <= lastPos) {
 
-             //得到要更新的item的view
-             View view = mListView.getChildAt(itemIndex - visiblePosition);
+            //得到要更新的item的view
+            View view = mListView.getChildAt(itemIndex - firstPos);
 
-             //调用adapter更新界面
-             adapter.updateView(view, itemIndex);
-         }
+            //调用adapter更新界面
+            adapter.updateView(view, itemIndex);
+        }
     }
 
 
