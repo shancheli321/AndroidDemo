@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(makeEntity("推送通知栏", "com.lf.notification.MyNotificationActivity"));
         arrayList.add(makeEntity("alert弹窗", "com.lf.alert.MyAlertActivity"));
         arrayList.add(makeEntity("litview", "com.lf.listview.MyListViewActivity"));
+        arrayList.add(makeEntity("RecycleView", "com.lf.recycleview.MyRecycleViewActivity"));
+
 
         AppBaseListAdapter<MyMainEntity> adapter = new MyAdapter(arrayList, R.layout.main_item);
 

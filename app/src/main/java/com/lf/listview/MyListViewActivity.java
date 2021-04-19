@@ -55,7 +55,6 @@ public class MyListViewActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                list.add(getEntity("add", "add_content", R.drawable.ic_launcher_background));
                 adapter.add(getEntity("add", "add_content", R.drawable.ic_launcher_background));
             }
         });
@@ -64,7 +63,6 @@ public class MyListViewActivity extends AppCompatActivity {
         dele.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                list.remove(0);
                 adapter.remove(0);
             }
         });
@@ -102,7 +100,7 @@ public class MyListViewActivity extends AppCompatActivity {
         if (itemIndex >= firstPos && itemIndex <= lastPos) {
 
             //得到要更新的item的view
-            View view = mListView.getChildAt(itemIndex - firstPos);
+            View view = mListView.getChildAt(itemIndex + 1 - firstPos);
 
             //调用adapter更新界面
             adapter.updateView(view, itemIndex);

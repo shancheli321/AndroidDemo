@@ -38,9 +38,9 @@ public abstract class AppBaseRectcleAdapter<T> extends RecyclerView.Adapter {
     public AppBaseRectcleAdapter(Context context,
                                  List<T> data,
                                  int layoutRes) {
-        this.mContext = context;
-        this.mLayoutRes = layoutRes;
-        this.mData = data;
+        mContext = context;
+        mLayoutRes = layoutRes;
+        mData = data;
     }
 
     @Override
@@ -143,17 +143,34 @@ public abstract class AppBaseRectcleAdapter<T> extends RecyclerView.Adapter {
      * 更新adapter
      * @param data
      */
-    public void updateData(List<T> data) {
+    public void updateAll(List<T> data) {
         this.mData = data;
         notifyItemRangeChanged(0, getItemCount());
     }
 
 
     /**
+     * 更新某一个
+     * @param position
+     * @param data
+     */
+    public void updateItemAtPosition(int position, T data) {
+
+        if (null == mData || mData.size() < position) {
+            return;
+        }
+
+        this.mData.remove(position);
+        this.mData.add(position, data);
+
+        notifyItemChanged(position + 1);
+    }
+
+    /**
      * 添加新的adapter
      * @param data
      */
-    public void addNewItem(T data) {
+    public void addItem(T data) {
         if(mData == null) {
             mData = new ArrayList<T>();
         }
@@ -167,13 +184,27 @@ public abstract class AppBaseRectcleAdapter<T> extends RecyclerView.Adapter {
      * 删除Item
      * @param data
      */
-    public void deleteItem(T data) {
+    public void removeItem(T data) {
         if(mData == null || mData.isEmpty()) {
             return;
         }
 
         int position = mData.indexOf(data);
         mData.remove(data);
+        notifyItemRemoved(position + 1);
+    }
+
+
+    /**
+     * 删除某个位置的item
+     * @param position
+     */
+    public void removeItemAtPosition(int position) {
+        if(mData == null || mData.isEmpty()) {
+            return;
+        }
+
+        mData.remove(position);
         notifyItemRemoved(position + 1);
     }
 

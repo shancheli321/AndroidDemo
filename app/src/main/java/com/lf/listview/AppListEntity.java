@@ -31,4 +31,16 @@ public class AppListEntity {
     public void setContent(String content) {
         this.content = content;
     }
+
+
+
+    public static AppListEntity getEntity(String title, String content, int image) {
+        AppListEntity entity = new AppListEntity();
+
+        entity.setTitle(title);
+        entity.setContent(content);
+        entity.setImage(image);
+
+        return entity;
+    }
 }

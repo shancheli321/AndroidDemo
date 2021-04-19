@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.lf.thread.MyThreadActivity"></activity>
+        <activity android:name="com.lf.recycleview.MyRecycleViewActivity"></activity>
+        <activity android:name="com.lf.thread.MyThreadActivity" />
         <activity android:name="com.lf.fragment.MyFragmentActivity" />
         <activity android:name="com.lf.datepicker.AppDatePickerActivity" />
         <activity android:name="com.lf.alert.MyAlertActivity" />

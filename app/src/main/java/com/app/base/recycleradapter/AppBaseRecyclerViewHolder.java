@@ -1,9 +1,11 @@
 package com.app.base.recycleradapter;
 
+import android.graphics.drawable.Drawable;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,4 +45,8 @@ public class AppBaseRecyclerViewHolder extends RecyclerView.ViewHolder {
     }
 
 
+    public void setImageView(int id, int res) {
+        ImageView view = getView(id);
+        view.setImageResource(res);
+    }
 }
