@@ -3,6 +3,7 @@ package com.lf.listview;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -27,13 +28,9 @@ public class MyListViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_list_view);
 
+        final List<AppListEntity> list = new ArrayList<>();
+
         mListView = findViewById(R.id.m_list);
-
-
-        List<AppListEntity> list = new ArrayList<>();
-        list.add(getEntity("one", "one_content", R.drawable.ic_launcher_background));
-        list.add(getEntity("two", "two_content", R.drawable.ic_launcher_background));
-        list.add(getEntity("three", "three_content", R.drawable.ic_launcher_background));
 
         adapter = new AppBaseListAdapter<AppListEntity>(list, R.layout.my_list_layout) {
             @Override
@@ -46,7 +43,44 @@ public class MyListViewActivity extends AppCompatActivity {
             }
         };
 
+        list.add(getEntity("one", "one_content", R.drawable.ic_launcher_background));
+        list.add(getEntity("two", "two_content", R.drawable.ic_launcher_background));
+        list.add(getEntity("three", "three_content", R.drawable.ic_launcher_background));
+
+
+        LayoutInflater inflater = LayoutInflater.from(MyListViewActivity.this);
+        View headerView = inflater.inflate(R.layout.list_header_layout, null);
+
+        TextView add = headerView.findViewById(R.id.header_add);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                list.add(getEntity("add", "add_content", R.drawable.ic_launcher_background));
+                adapter.add(getEntity("add", "add_content", R.drawable.ic_launcher_background));
+            }
+        });
+
+        TextView dele = headerView.findViewById(R.id.header_delete);
+        dele.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                list.remove(0);
+                adapter.remove(0);
+            }
+        });
+
+        TextView update = headerView.findViewById(R.id.header_update);
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateView(0);
+            }
+        });
+
+
         mListView.setAdapter(adapter);
+
+        mListView.addHeaderView(headerView);
 
 //        mListView.setEmptyView();
 
