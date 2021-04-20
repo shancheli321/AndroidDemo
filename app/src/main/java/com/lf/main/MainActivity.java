@@ -37,6 +37,8 @@ import java.util.ArrayList;
         5. Glide
         6. ARouter
         7. JSBridge
+        8. Rxjava
+        9. Looper
 
 
     三、与时俱进、热门技术
@@ -83,7 +85,9 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(makeEntity("alert弹窗", "com.lf.alert.MyAlertActivity"));
         arrayList.add(makeEntity("litview", "com.lf.listview.MyListViewActivity"));
         arrayList.add(makeEntity("RecycleView", "com.lf.recycleview.MyRecycleViewActivity"));
-
+        arrayList.add(makeEntity("多线程", "com.lf.thread.MyThreadActivity"));
+        arrayList.add(makeEntity("定时器和延时器", "com.lf.timer.MyTimerActivity"));
+        arrayList.add(makeEntity("webview", "com.lf.webview.MyWebviewActivity"));
 
         AppBaseListAdapter<MyMainEntity> adapter = new MyAdapter(arrayList, R.layout.main_item);
 
