@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(makeEntity("多线程", "com.lf.thread.MyThreadActivity"));
         arrayList.add(makeEntity("定时器和延时器", "com.lf.timer.MyTimerActivity"));
         arrayList.add(makeEntity("webview", "com.lf.webview.MyWebviewActivity"));
+        arrayList.add(makeEntity("动画", "com.lf.animation.MyAnimationActivity"));
 
         AppBaseListAdapter<MyMainEntity> adapter = new MyAdapter(arrayList, R.layout.main_item);
 
