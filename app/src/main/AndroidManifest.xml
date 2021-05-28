@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.lf.tab.MyTabActivity"></activity>
+        <activity android:name="com.lf.touchevent.MyTouchEventActivity"></activity>
+        <activity android:name="com.lf.nativejs.MyNativeJSActivity" />
+        <activity android:name="com.lf.tab.MyTabActivity" />
         <activity android:name="com.lf.animation.MyAnimationActivity" />
         <activity android:name="com.lf.webview.MyWebviewActivity" />
         <activity android:name="com.lf.timer.MyTimerActivity" />
