@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(makeEntity("webview", "com.lf.webview.MyWebviewActivity"));
         arrayList.add(makeEntity("动画", "com.lf.animation.MyAnimationActivity"));
         arrayList.add(makeEntity("tabactivity", "com.lf.tab.MyTabActivity"));
+        arrayList.add(makeEntity("js-native", "com.lf.nativejs.MyNativeJSActivity"));
 
         AppBaseListAdapter<MyMainEntity> adapter = new MyAdapter(arrayList, R.layout.main_item);
 
