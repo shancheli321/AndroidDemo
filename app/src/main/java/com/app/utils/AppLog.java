@@ -83,4 +83,19 @@ public class AppLog {
         Log4a.d("AppLog---", string);
     }
 
+    public static void e(String tag, String string) {
+        Log4a.e(tag, string);
+    }
+
+    public static void e(String string) {
+        Log4a.e("AppLog---", string);
+    }
+
+    public static void i(String tag, String string) {
+        Log4a.i(tag, string);
+    }
+
+    public static void i(String string) {
+        Log4a.i("AppLog---", string);
+    }
 }

@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.lf.customview.MyCustomViewActivity"></activity>
+        <activity android:name="com.lf.forgroundservice.MyForeGroundServiceActivity"></activity>
+        <activity android:name="com.lf.customview.MyCustomViewActivity" />
         <activity android:name="com.lf.touchevent.MyTouchEventActivity" />
         <activity android:name="com.lf.nativejs.MyNativeJSActivity" />
         <activity android:name="com.lf.tab.MyTabActivity" />
@@ -55,6 +56,9 @@
             android:name="com.lf.service.MyService"
             android:enabled="true"
             android:exported="true" />
+
+        <service android:name="com.lf.forgroundservice.MyForegroundEnablingService" />
+        <service android:name="com.lf.forgroundservice.MyForeGroundService" />
 
         <receiver android:name="com.lf.broadcastceceiver.MyStaticBroadReceiver">
             <intent-filter>

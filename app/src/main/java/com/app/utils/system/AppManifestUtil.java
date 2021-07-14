@@ -1,4 +1,4 @@
-package com.app.utils;
+package com.app.utils.system;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;

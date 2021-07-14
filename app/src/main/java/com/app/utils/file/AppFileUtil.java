@@ -1,8 +1,9 @@
-package com.app.utils;
+package com.app.utils.file;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.os.Environment;
+import android.os.StatFs;
 import android.util.Log;
 
 import androidx.core.app.ActivityCompat;
@@ -94,6 +95,49 @@ public class AppFileUtil {
             file.delete();
         }
     }
+
+    /**
+     * 递归取得文件夹大小
+     * @param file
+     * @return long
+     */
+    public static long getFileSize(File file) {
+        long size = 0;
+        if (file != null && file.exists() && file.isDirectory()) {
+            File files[] = file.listFiles();
+            for (int i = 0; i < files.length; i++) {
+                if (files[i].isDirectory()){
+                    size = size + getFileSize(files[i]);
+                }else {
+                    size = size + files[i].length();
+                }
+            }
+        }
+        return size;
+    }
+
+    /**
+     * 获取SD卡剩余空间的大小(SD卡剩余空间的大小（单位：byte）)
+     * @return long
+     */
+    @SuppressWarnings("deprecation")
+    public static long getSdCardSize() {
+        String str = Environment.getExternalStorageDirectory().getPath();
+        StatFs localStatFs = new StatFs(str);
+        long blockSize = localStatFs.getBlockSize();
+        return localStatFs.getAvailableBlocks() * blockSize;
+    }
+
+
+    /**
+     * 检查SDCard是否可用，是否存在
+     * @return boolean
+     */
+    public static boolean getSdCardIsEnable() {
+        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+    }
+
+
 
 
     //****文件内容读写**********************************************************************************************

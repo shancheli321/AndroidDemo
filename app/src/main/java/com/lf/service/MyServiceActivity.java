@@ -1,11 +1,13 @@
 package com.lf.service;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
@@ -90,23 +92,13 @@ public class MyServiceActivity extends AppCompatActivity {
     private void setService() {
         // 开启服务
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
+            Log.d(TAG, String.valueOf(Thread.currentThread().getId()));
 
-                Log.d(TAG, String.valueOf(Thread.currentThread().getId()));
-
-
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        Log.d(TAG, String.valueOf(Thread.currentThread().getId()));
-                        Intent intent = new Intent(MyServiceActivity.this, MyService.class);
-                        startService(intent);
-                    }
-                }).start();
-
-
+            Intent intent = new Intent(MyServiceActivity.this, MyService.class);
+            startForegroundService(intent);
             }
         });
 

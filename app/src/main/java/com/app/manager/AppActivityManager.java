@@ -1,4 +1,4 @@
-package com.app.utils;
+package com.app.manager;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -86,7 +86,7 @@ public class AppActivityManager {
     /**
      * 退出应用程序
      */
-    public void AppExit(Context context) {
+    public void exitApp(Context context) {
         try {
             finishAllActivity();
             ActivityManager activityMgr= (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);

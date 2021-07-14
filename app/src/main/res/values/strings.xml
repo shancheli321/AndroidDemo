@@ -5,5 +5,14 @@
     <string name="date_picker_cancle">取消</string>
     <string name="date_picker_title">这是日期选择器</string>
     <string name="date_picker_sure">确定</string>
+    <string name="title_activity_my_fore_ground_service">MyForeGroundServiceActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>
