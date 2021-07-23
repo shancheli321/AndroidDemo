@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lf.audio.MyAudioActivity">
+
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始录音"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        />
+
+    <Button
+        android:id="@+id/pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="暂停录音"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/start"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        />
+
+
+    <Button
+        android:id="@+id/goon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="继续录音"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/pause"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        />
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止录音"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/goon"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        />
+
+
+    <Button
+        android:id="@+id/start_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始播放"
+        app:layout_constraintTop_toBottomOf="@id/start"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        />
+
+    <Button
+        android:id="@+id/pause_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="暂停播放"
+        app:layout_constraintTop_toBottomOf="@id/pause"
+        app:layout_constraintLeft_toRightOf="@id/start_play"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        />
+    <Button
+        android:id="@+id/goon_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="继续播放"
+        app:layout_constraintTop_toBottomOf="@id/pause"
+        app:layout_constraintLeft_toRightOf="@id/pause_play"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        />
+
+    <Button
+        android:id="@+id/stop_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止播放"
+        app:layout_constraintTop_toBottomOf="@id/stop"
+        app:layout_constraintLeft_toRightOf="@id/goon_play"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
