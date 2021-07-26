@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,9 @@ public class MyAudioActivity extends AppCompatActivity {
     };
 
     private AudioRecorder audioRecorder;
+
+    //1. MediaPlayer支持：AAC、AMR、FLAC、MP3、MIDI、OGG、PCM等格式
+    private MediaPlayer mediaPlayer;
 
 
     @Override
@@ -84,6 +88,35 @@ public class MyAudioActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //停止录音
                 audioRecorder.stopRecord();
+            }
+        });
+
+
+        startPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        pausePlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        goonPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        stopPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

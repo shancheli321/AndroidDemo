@@ -1,4 +1,4 @@
-package com.app.utils.ui;
+package com.app.appview;
 
 import android.content.Context;
 import android.graphics.Color;

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.appview.AppMoreText;
+import com.app.appview.AppMoreText;
 import com.lf.main.R;
 
 public class MyCustomViewActivity extends AppCompatActivity {
