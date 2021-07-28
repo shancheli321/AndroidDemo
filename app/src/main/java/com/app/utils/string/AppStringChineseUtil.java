@@ -73,7 +73,7 @@ public class AppStringChineseUtil {
      * @param ret
      * @return true 包含中英文标点符号
      */
-    public static boolean checkPunctuation(String ret) {
+    public static boolean hasPunctuation(String ret) {
         boolean b = false;
         String tmp = ret;
 //        replaceAll里面的正则匹配可以清空字符串中的中英文标点符号，只保留数字、英文和中文。
@@ -204,6 +204,53 @@ public class AppStringChineseUtil {
 
 
     /**
+     * 移除中英文标点符号
+     * @param content
+     * @return
+     */
+    public static String removeProperty(String content) {
+        return content.replaceAll("\\pP|\\pS|\\pC|\\pN|\\pZ", "");
+    }
+
+
+    /**
+     * 得到字母
+     * @param content
+     * @return
+     */
+    public static String getLetter(String content) {
+        return content.replaceAll("[^(A-Za-z)]", "");
+    }
+
+    /**
+     * 得到中文
+     * @param content
+     * @return
+     */
+    public static String getChinese(String content) {
+        return  content.replaceAll("[^(\\u4e00-\\u9fa5)]", "");
+
+    }
+
+    /**
+     * 得到数字
+     * @param content
+     * @return
+     */
+    public static String getNumber(String content) {
+        return content.replaceAll("[^(0-9)]", "");
+    }
+
+    /**
+     * 得到中文和字母
+     * @param content
+     * @return
+     */
+    public static String getChineseAndLetter(String content) {
+        return content.replaceAll("[^(\\u4e00-\\u9fa5)] | [^(A-Za-z)]", "");
+    }
+
+    /**
      * 将首字母大写
      * <p/>
      * capitalizeFirstLetter(null) = null;
@@ -242,7 +289,7 @@ public class AppStringChineseUtil {
      * @param str
      * @return
      */
-    public static String utf8Encode(String str) {
+    public static String toUtf8Encode(String str) {
 
         if (!AppStringUtil.isEmpty(str) && str.getBytes().length != str.length()) {
             try {
