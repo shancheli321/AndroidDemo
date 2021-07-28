@@ -1,4 +1,4 @@
-package com.app.utils.avaliable;
+package com.app.utils.string;
 
 import android.text.TextUtils;
 
@@ -17,7 +17,7 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AppAvaliableUtil {
+public class AppStringValiableUtil {
 
     //邮箱表达式
     private final static Pattern email_pattern = Pattern.compile("^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$");
@@ -413,7 +413,7 @@ public class AppAvaliableUtil {
         }
 
         //================ 地区码时候有效 ================
-        Hashtable hashtable = AppIDCardValidUtil.getAreaCodeAll();
+        Hashtable hashtable = AppStringIDCardValidUtil.getAreaCodeAll();
         if (hashtable.get(Ai.substring(0, 2)) == null) {
             errmsg = "身份证地区编码错误";
             AppLog.e("AppValidationMgr-->>isIDCard", errmsg);

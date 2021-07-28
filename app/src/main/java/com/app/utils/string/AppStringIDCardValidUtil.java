@@ -1,9 +1,9 @@
-package com.app.utils.avaliable;
+package com.app.utils.string;
 
 import java.util.Calendar;
 import java.util.Hashtable;
 
-public class AppIDCardValidUtil {
+public class AppStringIDCardValidUtil {
 
     /**
      * 获取身份证号所有区域编码设置
