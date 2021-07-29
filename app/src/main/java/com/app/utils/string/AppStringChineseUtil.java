@@ -25,7 +25,11 @@ public class AppStringChineseUtil {
 
     // 仅仅包含字母和数字
     private static String LETTER_DIGIT_REGEX = "^[a-z0-9A-Z]+$";
+
+    // 仅仅包含中文和字母
     private static String CHINESE_LETTER_REGEX = "([\u4e00-\u9fa5]+|[a-zA-Z]+)";
+
+    // 仅仅包含中文 字母 和数字
     private static String CHINESE_LETTER_DIGIT_REGEX = "^[a-z0-9A-Z\u4e00-\u9fa5]+$";
 
     /**
@@ -247,7 +251,7 @@ public class AppStringChineseUtil {
      * @return
      */
     public static String getChineseAndLetter(String content) {
-        return content.replaceAll("[^(\\u4e00-\\u9fa5)] | [^(A-Za-z)]", "");
+        return content.replaceAll(CHINESE_LETTER_REGEX, "");
     }
 
     /**
