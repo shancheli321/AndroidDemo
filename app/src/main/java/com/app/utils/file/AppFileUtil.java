@@ -16,25 +16,6 @@ import java.io.IOException;
 public class AppFileUtil {
 
 
-    /**
-     * 检查文件目录是否存在，不存在就创建新的目录
-     * @param file
-     * @param isDir
-     */
-    public static void checkFilePath(File file , boolean isDir) {
-         if(file!=null) {
-             if(!isDir) {
-                 //如果是文件就返回父目录
-                 file = file.getParentFile();
-             }
-
-             if(file!=null && !file.exists()){
-                 file.mkdirs();
-             }
-        }
-     }
-
-
 
     /**
      * 创建文件夹
