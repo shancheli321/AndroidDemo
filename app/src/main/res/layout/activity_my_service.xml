@@ -62,5 +62,16 @@
         android:layout_marginTop="100dp"
         />
 
+    <com.app.appview.AppNoPaddingTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button5"
+        android:background="@color/colorPrimary"
+        android:text="Hello"
+        android:textSize="50sp"
+        app:removeDefaultPadding="true"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
